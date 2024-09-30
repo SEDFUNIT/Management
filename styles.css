@@ -207,11 +207,11 @@
     margin: 20px auto; /* เว้นระยะ */
 }
 
-/* Animation for spinner */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
-}  
+}
+ 
 .disabled {
     pointer-events: none; /* ปิดการใช้งานการคลิก */
     opacity: 0.9; /* ทำให้จาง */

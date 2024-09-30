@@ -56,6 +56,7 @@
 </div>
 
 
+
 <!-- Popup Modal -->
 <div id="popup" class="popup" style="display:none;">
     <div class="popup-content">
@@ -78,13 +79,14 @@ function showPopup(url) {
     // Show the popup
     document.getElementById("popup").style.display = "flex";
 
-    // Redirect to the new page after a short delay
+    // Open the new page in a new tab after a short delay
     setTimeout(function() {
-        window.location.href = url;
+        window.open(url, '_blank'); // เปิดในแท็บใหม่
     }, 1200);
 }
 
 function closePopup() {
     document.getElementById("popup").style.display = "none";
 }
+
 </script>

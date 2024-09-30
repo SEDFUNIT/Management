@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SEDF-Management (ระบบบริหารจัดการกองทุน)</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@300&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    </head>
+    
+<body>
+
+    <div class="background-icons">
+        <i class="fas fa-chart-line icon" style="top: 15%; left: 20%; animation-delay: 0s;"></i>
+        <i class="fas fa-users icon" style="top: 25%; left: 60%; animation-delay: 1s;"></i>
+        <i class="fas fa-cogs icon" style="top: 35%; left: 40%; animation-delay: 2s;"></i>
+        <i class="fas fa-file-invoice icon" style="top: 45%; left: 30%; animation-delay: 3s;"></i>
+        <i class="fas fa-hand-holding-usd icon" style="top: 55%; left: 70%; animation-delay: 4s;"></i>
+        <i class="fas fa-tools icon" style="top: 65%; left: 50%; animation-delay: 5s;"></i>
+        <i class="fas fa-chart-pie icon" style="top: 75%; left: 10%; animation-delay: 6s;"></i>
+        <i class="fas fa-tools icon" style="top: 85%; left: 80%; animation-delay: 7s;"></i>
+        <i class="fas fa-chart-line icon" style="top: 20%; left: 85%; animation-delay: 8s;"></i>
+        <i class="fas fa-tasks icon" style="top: 30%; left: 35%; animation-delay: 9s;"></i>
+    </div>
+ 
+    
+    <h1>
+        <img src="https://img5.pic.in.th/file/secure-sv1/f8c951253e6dac080a18d98398e1ccd8.th.png" alt="Logo" style="width: 60px; height: auto;">
+        <span class="title-text">ระบบบริหารจัดการกองทุน (กทศ.)</span>
+    </h1>
+    
+
+<div class="container">
+    <a href="#" class="box box-web" onclick="showPopup('https://sites.google.com/obec.go.th/sedfobec/home')">
+        <i class="bi bi-browser-chrome"></i>
+        <span class="footer-text">Website กทศ.</span>
+    </a>
+    <a href="#" class="box box-store" onclick="showPopup('https://script.google.com/a/obec.go.th/macros/s/AKfycbwgyAUSeQOiehUpV5HMPmiY9loO79hvdrS0b928i-OFDgE8DLIJ25Lv6F2rXRXj22S8gQ/exec')">
+        <i class="bi bi-cart-plus"></i>
+        <span class="footer-text">ระบบเบิกจ่ายวัสดุ-อุปกรณ์</span>
+    </a>
+    <a href="#" class="box box-meeting" onclick="showPopup('https://emt.obec.go.th/')">
+        <i class="bi bi-mic"></i>
+        <span class="footer-text"> OBEC Meetings</span>
+    </a>
+    <a href="#" class="box box-doc" onclick="showPopup('https://smart.obec.go.th/')">
+        <i class="bi bi-file-earmark-text-fill"></i>
+        <span class="footer-text">Smart OBEC</span>
+    </a>
+    <a href="#" class="box box-time disabled" onclick="event.preventDefault();">
+        <i class="bi bi-calendar2-week"></i>
+        <span class="footer-text">ระบบลางาน</span>
+    </a>    
+</div>
+
+
+<!-- Popup Modal -->
+<div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()"></span>
+        <div class="spinner"></div>
+        <p>กรุณารอสักครู่...</p>
+    </div>
+</div>
+
+
+<footer style="margin-top: auto; text-align: center; padding: 20px; font-size: 14px; color: #ffffff;">
+    Copyright © 2024 SEDF Management | ระบบบริหารจัดการกองทุน (กทศ.)
+ </footer>
+ 
+
+</body>
+</html>
+<script>
+function showPopup(url) {
+    // Show the popup
+    document.getElementById("popup").style.display = "flex";
+
+    // Redirect to the new page after a short delay
+    setTimeout(function() {
+        window.location.href = url;
+    }, 1200);
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>

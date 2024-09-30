@@ -82,9 +82,12 @@ function showPopup(url, event) {
     // แสดง popup
     document.getElementById("popup").style.display = "flex";
 
-    // เปิดหน้าใหม่ในแท็บใหม่ทันที
+    // เปิดหน้าใหม่ในแท็บใหม่
     window.open(url, '_blank'); // เปิดในแท็บใหม่
-    closePopup(); // ปิด popup
+    
+    // ปิด popup หลังจาก 1.2 วินาที
+    setTimeout(function() {
+        closePopup(); // ปิด popup
+    }, 1200);
 }
-
 </script>

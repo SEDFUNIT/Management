@@ -33,19 +33,19 @@
     
 
 <div class="container">
-    <a href="#" class="box box-web" onclick="showPopup('https://sites.google.com/obec.go.th/sedfobec/home')">
+    <a href="#" class="box box-web" onclick="showPopup('https://sites.google.com/obec.go.th/sedfobec/home', event)">
         <i class="bi bi-browser-chrome"></i>
         <span class="footer-text">Website กทศ.</span>
     </a>
-    <a href="#" class="box box-store" onclick="showPopup('https://sedfunit.github.io/STORE/')">
+    <a href="#" class="box box-store" onclick="showPopup('https://sedfunit.github.io/STORE/', event)">
         <i class="bi bi-cart-plus"></i>
         <span class="footer-text">ระบบเบิกจ่ายวัสดุ-อุปกรณ์</span>
     </a>
-    <a href="#" class="box box-meeting" onclick="showPopup('https://emt.obec.go.th/')">
+    <a href="#" class="box box-meeting" onclick="showPopup('https://emt.obec.go.th/', event)">
         <i class="bi bi-mic"></i>
         <span class="footer-text"> OBEC Meetings</span>
     </a>
-    <a href="#" class="box box-doc" onclick="showPopup('https://smart.obec.go.th/')">
+    <a href="#" class="box box-doc" onclick="showPopup('https://smart.obec.go.th/', event)">
         <i class="bi bi-file-earmark-text-fill"></i>
         <span class="footer-text">Smart OBEC</span>
     </a>
@@ -75,18 +75,18 @@
 </body>
 </html>
 <script>
-function showPopup(url) {
-    // Show the popup
+function showPopup(url, event) {
+    // ป้องกันการทำงานของลิงก์
+    event.preventDefault();
+    
+    // แสดง popup
     document.getElementById("popup").style.display = "flex";
 
-    // Open the new page in a new tab after a short delay
+    // เปิดหน้าใหม่ในแท็บใหม่หลังจากแสดง popup
     setTimeout(function() {
         window.open(url, '_blank'); // เปิดในแท็บใหม่
+        closePopup(); // ปิด popup
     }, 1200);
-}
-
-function closePopup() {
-    document.getElementById("popup").style.display = "none";
 }
 
 </script>

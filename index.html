@@ -85,16 +85,19 @@ function showPopup(url, event) {
     // เปิดหน้าใหม่ในแท็บใหม่
     window.open(url, '_blank'); // เปิดในแท็บใหม่
     
-    // ปิด popup และหยุด spinner หลังจาก 1.2 วินาที
+    // ปิด popup หลังจาก 1.2 วินาที
     setTimeout(function() {
         closePopup(); // ปิด popup
     }, 1200);
 }
 
 function closePopup() {
-    document.getElementById("popup").style.display = "none";
     // หยุดการหมุน spinner
     const spinner = document.querySelector('.spinner');
     spinner.style.animation = 'none'; // หยุดการหมุน
+
+    // ซ่อน popup
+    document.getElementById("popup").style.display = "none";
 }
+
 </script>

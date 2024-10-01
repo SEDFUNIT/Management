@@ -32,29 +32,28 @@
     </h1>
     
 
-<div class="container">
-    <a href="#" class="box box-web" onclick="showPopup('https://sites.google.com/obec.go.th/sedfobec/home', event)">
-        <i class="bi bi-browser-chrome"></i>
-        <span class="footer-text">Website กทศ.</span>
-    </a>
-    <a href="#" class="box box-store" onclick="showPopup('https://sedfunit.github.io/STORE/', event)">
-        <i class="bi bi-cart-plus"></i>
-        <span class="footer-text">ระบบเบิกจ่ายวัสดุ-อุปกรณ์</span>
-    </a>
-    <a href="#" class="box box-meeting" onclick="showPopup('https://emt.obec.go.th/', event)">
-        <i class="bi bi-mic"></i>
-        <span class="footer-text"> OBEC Meetings</span>
-    </a>
-    <a href="#" class="box box-doc" onclick="showPopup('https://smart.obec.go.th/', event)">
-        <i class="bi bi-file-earmark-text-fill"></i>
-        <span class="footer-text">Smart OBEC</span>
-    </a>
-    <a href="#" class="box box-time disabled" onclick="event.preventDefault();">
-        <i class="bi bi-calendar2-week"></i>
-        <span class="footer-text">ระบบลางาน</span>
-    </a>    
-</div>
-
+    <div class="container">
+        <a href="#" class="box box-web" onclick="showPopup('https://sites.google.com/obec.go.th/sedfobec/home', event)">
+            <i class="bi bi-browser-chrome"></i>
+            <span class="footer-text">Website กทศ.</span>
+        </a>
+        <a href="#" class="box box-store" onclick="showPopup('https://sedfunit.github.io/STORE/', event)">
+            <i class="bi bi-cart-plus"></i>
+            <span class="footer-text">ระบบเบิกจ่ายวัสดุ-อุปกรณ์</span>
+        </a>
+        <a href="#" class="box box-meeting" onclick="showPopup('https://emt.obec.go.th/', event)">
+            <i class="bi bi-mic"></i>
+            <span class="footer-text"> OBEC Meetings</span>
+        </a>
+        <a href="#" class="box box-doc" onclick="showPopup('https://smart.obec.go.th/', event)">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <span class="footer-text">Smart OBEC</span>
+        </a>
+        <a href="#" class="box box-time disabled" onclick="event.preventDefault();">
+            <i class="bi bi-calendar2-week"></i>
+            <span class="footer-text">ระบบลางาน</span>
+        </a>    
+    </div>
 
 
 <!-- Popup Modal -->
@@ -75,28 +74,25 @@
 </body>
 </html>
 <script>
-function showPopup(url, event) {
-    // ป้องกันการทำงานของลิงก์
-    event.preventDefault();
-    
-    // แสดง popup
+function showPopup(url) {
+    // Show the popup
     document.getElementById("popup").style.display = "flex";
 
-    // เปิดหน้าใหม่ในแท็บใหม่
-    window.open(url, '_blank'); // เปิดในแท็บใหม่
-    
-    // ปิด popup หลังจาก 1.2 วินาที
+    // Redirect to the new page in a new tab after a short delay
     setTimeout(function() {
-        closePopup(); // ปิด popup
-    }, 1500);
+        let newTab = window.open(url, '_blank'); // Open the URL in a new tab
+        
+        // Close the popup after opening the new tab
+        if (newTab) {
+            // If the new tab opened successfully
+            setTimeout(function() {
+                document.getElementById("popup").style.display = "none"; // Close the popup
+            }, 500); // Close popup after 500 milliseconds (or adjust delay as needed)
+        }
+    }, 1200); // 1200 milliseconds delay for showing the popup
 }
 
 function closePopup() {
-    // หยุดการหมุน spinner
-    const spinner = document.querySelector('.spinner');
-    spinner.style.animation = 'none'; // หยุดการหมุน
-
-    // ซ่อน popup
     document.getElementById("popup").style.display = "none";
 }
 
